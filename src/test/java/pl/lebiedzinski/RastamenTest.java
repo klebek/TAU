@@ -1,7 +1,6 @@
-package pl.lebiedzinski.RastamenTest;
+package pl.lebiedzinski;
 
 import org.junit.Test;
-import pl.lebiedzinski.Rastaman;
 
 import static org.junit.Assert.assertNotNull;
 
