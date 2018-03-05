@@ -6,8 +6,9 @@ import static org.junit.Assert.assertNotNull;
 
 public class RastamenTest {
     @Test
-    public void testFindMaxInArray() {
+    public void testFindObject() {
         Rastaman high = new Rastaman();
         assertNotNull(high);
     }
+
 }
