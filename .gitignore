@@ -1,3 +1,4 @@
 .idea/
 target/maven-status/maven-compiler-plugin/
+target
 lab01.iml
