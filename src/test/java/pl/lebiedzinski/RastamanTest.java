@@ -24,10 +24,10 @@ public class RastamanTest {
     }
 
     @Test
-    public void addRstaman(){
+    public void addRastaman(){
         Rastaman marley = new Rastaman();
-        marley.setId((int) 1);
-        marley.setType("Testowy 1");
+        marley.setId(1);
+        marley.setType("Bobek");
         rastamanRepository.addRastaman(marley);
         assertNotNull(rastamanRepository.getById(marley.getId()));
 
