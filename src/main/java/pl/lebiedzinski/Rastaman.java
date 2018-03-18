@@ -18,7 +18,7 @@ public class Rastaman {
     }
 
     public int getGrams() {
-        return grams;
+        return this.grams;
     }
 
     public void setGrams(int grams) {
@@ -26,12 +26,16 @@ public class Rastaman {
     }
 
     public String getType() {
-        return type;
+        return this.type;
     }
 
     public void setType(String type) {
         this.type = type;
     }
+
+    public Rastaman(int id, String name, int grams, String type) {}
+
+    public Rastaman() {}
 
     private int id;
     private String name;
