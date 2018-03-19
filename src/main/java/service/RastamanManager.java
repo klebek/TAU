@@ -8,19 +8,14 @@ import java.util.List;
 
 public interface RastamanManager {
 
-    public void addRastaman(Rastaman rastaman);
-
-    void dropDatatable() throws SQLException;
-
     public Connection getConnection();
-
-    public void setConnection(Connection connection) throws SQLException;
-
     public List<Rastaman> getAll();
 
-    Rastaman getById(int id) throws SQLException;
-
     public void deleteRastaman(Rastaman rastaman);
+    public void updateRastaman(int oldId, Rastaman newRastaman) throws SQLException;
+    public void dropDatatable() throws SQLException;
+    public void setConnection(Connection connection) throws SQLException;
+    public void addRastaman(Rastaman rastaman);
 
-    void updateRastaman(int oldId, Rastaman newRastaman) throws SQLException;
+    Rastaman getById(int id) throws SQLException;
 }

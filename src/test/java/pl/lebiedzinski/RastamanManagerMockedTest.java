@@ -45,7 +45,7 @@ public class RastamanManagerMockedTest {
         rastamanManager.deleteRastaman(marley);
         if (rastamanManager.getAll().size() > 0){
             assertNotNull(rastamanManager.getAll());
-        }else {
+        } else {
             assertNull(rastamanManager.getById(marley.getId()));
         }
     }
