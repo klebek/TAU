@@ -56,6 +56,8 @@ public class RastamanManagerTest {
         int marleyToUpdate = rastamanManager.getAll().size()-1;
         rastamanManager.updateRastaman(marleyToUpdate, marley);
         assertEquals(rastamanManager.getById(marleyToUpdate).getType(), marley.getType());
+        assertEquals(rastamanManager.getAll().size(), marleyToUpdate+1);
+        assertEquals(1, rastamanManager.updateRastaman(marleyToUpdate, marley));
     }
 
     @Test
@@ -92,7 +94,5 @@ public class RastamanManagerTest {
         rastamanManager.addRastaman(chronixx);
         rastamanManager.addRastaman(albarosie);
     }
-
-
 
 }

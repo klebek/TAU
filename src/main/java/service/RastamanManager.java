@@ -12,7 +12,7 @@ public interface RastamanManager {
     public List<Rastaman> getAll();
 
     public void deleteRastaman(Rastaman rastaman) throws SQLException;
-    public void updateRastaman(int oldId, Rastaman newRastaman) throws SQLException;
+    public int updateRastaman(int oldId, Rastaman newRastaman) throws SQLException;
     public void dropDatatable() throws SQLException;
     public void setConnection(Connection connection) throws SQLException;
     public void addRastaman(Rastaman rastaman);

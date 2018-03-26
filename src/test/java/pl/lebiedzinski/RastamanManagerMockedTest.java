@@ -1,11 +1,9 @@
 package pl.lebiedzinski;
 
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import repository.RastamanRepositoryFactory;
 import service.RastamanManager;
 import service.RastamanManagerImpl;
 
@@ -54,7 +52,7 @@ public class RastamanManagerMockedTest {
     public void checkingUpdateRastaman() throws SQLException {
         Rastaman marley = new Rastaman();
         marley.setName("Marley");
-        marley.setGrams(4);
+        marley.setGrams(444444);
         marley.setType("Stoned");
         int marleyToUpdate = 170;
         rastamanManager.updateRastaman(marleyToUpdate, marley);
@@ -66,7 +64,7 @@ public class RastamanManagerMockedTest {
         assertNotNull(rastamanManager.getAll());
     }
 
-    @Before
+    /*@Before
     public void checkingInitRepository() {
         rastamanManager = (RastamanManager) RastamanRepositoryFactory.getInstance();
         Rastaman marley = new Rastaman();
@@ -95,6 +93,7 @@ public class RastamanManagerMockedTest {
         rastamanManager.addRastaman(chronixx);
         rastamanManager.addRastaman(albarosie);
     }
+    */
 
 
 

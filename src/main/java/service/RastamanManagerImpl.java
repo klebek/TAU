@@ -144,13 +144,21 @@ public class RastamanManagerImpl extends RastamanRepositoryFactory implements Ra
     }
 
     @Override
-    public void updateRastaman(int oldId, Rastaman newRastaman) throws SQLException{
+    public int updateRastaman(int oldId, Rastaman newRastaman) throws SQLException {
 
-        updateRastamanStatement.setInt(2, oldId);
-        updateRastamanStatement.setString(1, newRastaman.getName());
-        updateRastamanStatement.setInt(1, newRastaman.getGrams());
-        updateRastamanStatement.setString(1, newRastaman.getType());
-        updateRastamanStatement.executeUpdate();
+        int count = 0;
+
+        try {
+
+            updateRastamanStatement.setInt(2, oldId);
+            updateRastamanStatement.setString(1, newRastaman.getName());
+            updateRastamanStatement.setInt(1, newRastaman.getGrams());
+            updateRastamanStatement.setString(1, newRastaman.getType());
+            count = updateRastamanStatement.executeUpdate();
+        }catch(SQLException e) {
+            throw new IllegalStateException(e.getMessage() + "\n" + e.getStackTrace().toString());
+        }
+        return count;
     }
 
     @Override
