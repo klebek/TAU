@@ -11,7 +11,7 @@ public interface RastamanRepository {
     public void initDatabase();
     public Rastaman getById(int id);
     public void addRastaman(Rastaman rastaman);
-    public void deleteRastaman(Rastaman rastaman);
+    public void deleteRastaman(Rastaman rastaman) throws SQLException;
     public void updateRastaman(int oldId, Rastaman newRastaman) throws SQLException;
     public void dropTable() throws SQLException;
 

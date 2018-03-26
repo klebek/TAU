@@ -1,7 +1,6 @@
 package pl.lebiedzinski;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -16,7 +15,6 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-@Ignore
 @RunWith(JUnit4.class)
 public class RastamanManagerTest {
 
@@ -34,19 +32,18 @@ public class RastamanManagerTest {
         rastaman.setGrams(15);
         rastaman.setType("Stoned");
         rastamanManager.addRastaman(rastaman);
-        assertNotNull(rastamanManager.getById(170));
+        assertNotNull(rastamanManager.getById(rastamanManager.getAll().size()-1));
     }
 
-
-    @Ignore
     @Test
     public void checkingDeleteRastaman() throws SQLException {
         Rastaman marley = rastamanManager.getById(1);
         rastamanManager.deleteRastaman(marley);
-        if (rastamanManager.getAll().size() > 0){
+
+        if (rastamanManager.getAll().size() > 0) {
             assertNotNull(rastamanManager.getAll());
-        } else {
             assertNull(rastamanManager.getById(marley.getId()));
+
         }
     }
 
@@ -56,7 +53,7 @@ public class RastamanManagerTest {
         marley.setName("Marley");
         marley.setGrams(4);
         marley.setType("Stoned");
-        int marleyToUpdate = 170;
+        int marleyToUpdate = rastamanManager.getAll().size()-1;
         rastamanManager.updateRastaman(marleyToUpdate, marley);
         assertEquals(rastamanManager.getById(marleyToUpdate).getType(), marley.getType());
     }
