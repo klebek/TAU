@@ -103,7 +103,7 @@ public class RastamanManagerMockedTest {
     }
 
     @Test
-    public void getAll() throws SQLException{
+    public void checkingGetAll() throws SQLException{
 
         AbstractResultSet mockedResultSet = mock(AbstractResultSet.class);
         when(mockedResultSet.next()).thenCallRealMethod();
@@ -157,7 +157,7 @@ public class RastamanManagerMockedTest {
 
 
     @Test
-    public void deleteRastaman() throws SQLException {
+    public void checkingDeleteRastaman() throws SQLException {
 
         when(deleteStatementMock.executeUpdate()).thenReturn(1);
         Rastaman rastaman = new Rastaman();
@@ -173,7 +173,7 @@ public class RastamanManagerMockedTest {
 
 
     @Test
-    public void updateUndead() throws SQLException {
+    public void checkingUpdateRastaman() throws SQLException {
 
         when(updateStatementMock.executeUpdate()).thenReturn(1);
         Rastaman rastaman = new Rastaman();
