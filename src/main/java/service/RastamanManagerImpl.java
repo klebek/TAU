@@ -57,20 +57,21 @@ public class RastamanManagerImpl extends RastamanRepositoryFactory implements Ra
     }
 
     @Override
-    public void addRastaman(Rastaman rastaman) {
+    public int addRastaman(Rastaman rastaman) {
         try {
             addRastamanStatement.setString(1, rastaman.getName());
             addRastamanStatement.setInt(2, rastaman.getGrams());
             addRastamanStatement.setString(3, rastaman.getType());
-            addRastamanStatement.executeUpdate();
+            return addRastamanStatement.executeUpdate();
         } catch (SQLException e) {
             throw new IllegalStateException(e.getMessage() + "\n" + e.getStackTrace().toString());
         }
     }
 
     @Override
-    public void deleteByIdStatement(Rastaman rastaman) throws SQLException {
-
+    public int deleteByIdStatement(Rastaman rastaman) throws SQLException {
+        deleteByIdStatement.setInt(1, rastaman.getId());
+        return deleteRastamanStatement.executeUpdate();
     }
 
     /*@Override
@@ -137,10 +138,10 @@ public class RastamanManagerImpl extends RastamanRepositoryFactory implements Ra
     }
 
     @Override
-    public void deleteRastaman(Rastaman rastaman) throws SQLException {
+    public int deleteRastaman(Rastaman rastaman) throws SQLException {
 
         deleteByIdStatement.setInt(1, rastaman.getId());
-        deleteByIdStatement.executeUpdate();
+        return deleteByIdStatement.executeUpdate();
     }
 
     @Override
