@@ -120,28 +120,6 @@ public class RastamanManagerMockedTest {
 
     }
 
-    abstract class AbstractResultSet implements ResultSet {
-        int i = 0;
-
-        @Override
-        public boolean next() throws SQLException {
-            if (i == 1)
-                return false;
-            i++;
-            return true;
-        }
-
-        @Override
-        public int getInt(String s) throws SQLException {
-            return 1;
-        }
-
-        @Override
-        public String getString(String columnLabel) throws SQLException {
-            return "AF";
-        }
-    }
-
     @Test
     public void checkingAddRastamanInCaseAddNull() throws Exception {
         when(insertStatementMock.executeUpdate()).thenReturn(1);
@@ -195,6 +173,28 @@ public class RastamanManagerMockedTest {
 
     }
 
+}
+
+abstract class AbstractResultSet implements ResultSet {
+    int i = 0;
+
+    @Override
+    public boolean next() throws SQLException {
+        if (i == 1)
+            return false;
+        i++;
+        return true;
+    }
+
+    @Override
+    public int getInt(String s) throws SQLException {
+        return 1;
+    }
+
+    @Override
+    public String getString(String columnLabel) throws SQLException {
+        return "AF";
+    }
 }
 /*
 @Ignore
